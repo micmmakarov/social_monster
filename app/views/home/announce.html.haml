@@ -1,0 +1,13 @@
+%a.button.send_announce{:href => "#"} Send announce
+.announce_list
+%input.friends_finder{:type => "text"}
+
+-friends = @api.get_connections("me", "friends")
+.friends_list
+  -friends.each do |f|
+    .friend{'data-friend-name' => f['name'], 'data-friend-id' => f['id']}
+      =image_tag("http://graph.facebook.com/#{f['id']}/picture")
+      =f['name']
+
+
+-#@api.put_connections("_friend's_id", "feed", :message => "Test message")

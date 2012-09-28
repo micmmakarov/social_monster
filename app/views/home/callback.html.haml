@@ -1,0 +1,8 @@
+%h1 Home#callback
+%p Find me in app/views/home/callback.html.haml
+%h1=current_user.name
+
+-@graph_data.each do |status|
+  =status["message"]
+  %i
+    =status["updated_time"]
